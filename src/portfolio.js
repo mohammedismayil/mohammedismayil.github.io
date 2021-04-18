@@ -10,7 +10,7 @@ const illustration = {
 
 const greeting = {
   username: "Mohammed Ismaayil",
-  title: "Hello, I'm Ismayail",
+  title: "Helloo, I'm Ismayail",
   subTitle: emoji(
     "A passionate iOS App Developer 🚀 having an experience of building Mobile applications with native iOS development."
   ),
