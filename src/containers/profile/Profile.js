@@ -13,6 +13,7 @@ export default function Profile() {
   function setProfileFunction(array) {
     setrepo(array);
   }
+  //
   function getProfileData() {
     const client = new ApolloClient({
       uri: "https://api.github.com/graphql",

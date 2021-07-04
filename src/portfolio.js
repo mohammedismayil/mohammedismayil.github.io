@@ -15,7 +15,7 @@ const greeting = {
     "A passionate iOS App Developer 🚀 having an experience of building Mobile applications with native iOS development."
   ),
   resumeLink:
-    "https://drive.google.com/drive/folders/1byffjqXjvjNbcqsPhxutRBCrTPpDu5Qc?usp=sharing",
+    "https://drive.google.com/file/d/152gR-vx8O2wJytvzgHDUWnSNbDY-XClX/view?usp=sharing",
   displayGreeting: true // Set false to hide this section, defaults to true
 };
 
