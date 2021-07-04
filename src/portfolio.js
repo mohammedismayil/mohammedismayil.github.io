@@ -20,7 +20,7 @@ const greeting = {
 };
 
 // Social Media Links
-
+//
 const socialMediaLinks = {
   github: "https://github.com/mohammedismayil",
   linkedin: "https://www.linkedin.com/in/mohammed-ismayil-b01bb4b0/",
