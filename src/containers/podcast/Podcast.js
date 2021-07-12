@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import "./Podcast.css";
+import "./Podcast.scss";
 import {podcastSection} from "../../portfolio";
 import {Fade} from "react-reveal";
 import StyleContext from "../../contexts/StyleContext";
@@ -33,6 +33,7 @@ export default function Podcast() {
                   src={podcastLink}
                   frameBorder="0"
                   scrolling="no"
+                  title="Podcast"
                 ></iframe>
               </div>
             );

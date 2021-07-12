@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import Headroom from "react-headroom";
-import "./Header.css";
+import "./Header.scss";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import StyleContext from "../../contexts/StyleContext";
 import {
@@ -26,9 +26,9 @@ function Header() {
     <Headroom>
       <header className={isDark ? "dark-menu header" : "header"}>
         <a href="/" className="logo">
-          {/* <span className="grey-color"> &lt;</span> */}
+          <span className="grey-color"> &lt;</span>
           <span className="logo-name">{greeting.username}</span>
-          {/* <span className="grey-color">/&gt;</span> */}
+          <span className="grey-color">/&gt;</span>
         </a>
         <input className="menu-btn" type="checkbox" id="menu-btn" />
         <label
@@ -58,13 +58,13 @@ function Header() {
             <li>
               <a href="#achievements">Achievements</a>
             </li>
-          )}
-          {viewBlog && (
+          )} */}
+          {/* {viewBlog && (
             <li>
               <a href="#blogs">Blogs</a>
             </li>
-          )}
-          {viewTalks && (
+          )} */}
+          {/* {viewTalks && (
             <li>
               <a href="#talks">Talks</a>
             </li>
@@ -73,7 +73,8 @@ function Header() {
             <a href="#contact">Contact Me</a>
           </li>
           <li>
-            <a href="#">
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+            <a>
               <ToggleSwitch />
             </a>
           </li>

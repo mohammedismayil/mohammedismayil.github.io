@@ -1,5 +1,5 @@
 import React, {useState, createRef} from "react";
-import "./ExperienceCard.css";
+import "./ExperienceCard.scss";
 import ColorThief from "colorthief";
 
 export default function ExperienceCard({cardInfo, isDark}) {
@@ -75,9 +75,9 @@ export default function ExperienceCard({cardInfo, isDark}) {
         >
           {cardInfo.desc}
         </p>
-        {/* <ul>
+        <ul>
           <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
-        </ul> */}
+        </ul>
       </div>
     </div>
   );

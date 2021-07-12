@@ -373,6 +373,52 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "elvisciuffetelli",
+      "name": "Elvis Ciuffetelli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/35818757?v=4",
+      "profile": "http://www.elvisciuffetelli.com",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "SJellen",
+      "name": "Scott Jellen",
+      "avatar_url": "https://avatars.githubusercontent.com/u/51421669?v=4",
+      "profile": "http://ScottJellen.com",
+      "contributions": [
+        "code",
+        "design"
+      ]
+    },
+    {
+      "login": "karthikmohan",
+      "name": "Karthik Mohan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25052382?v=4",
+      "profile": "https://www.linkedin.com/in/karthik-mohan-/",
+      "contributions": [
+        "bug"
+      ]
+    },
+    {
+      "login": "mhowell11",
+      "name": "mhowell11",
+      "avatar_url": "https://avatars.githubusercontent.com/u/62813469?v=4",
+      "profile": "https://github.com/mhowell11",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "gajanandh",
+      "name": "gajanandh",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80502737?v=4",
+      "profile": "https://github.com/gajanandh",
+      "contributions": [
+        "bug"
+      ]
     }
   ],
   "contributorsPerLine": 7,

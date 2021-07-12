@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import {Fade} from "react-reveal";
 import emoji from "react-easy-emoji";
-import "./Greeting.css";
+import "./Greeting.scss";
 import landingPerson from "../../assets/lottie/landingPerson";
 import DisplayLottie from "../../components/displayLottie/DisplayLottie";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
@@ -26,7 +26,6 @@ export default function Greeting() {
               >
                 {" "}
                 {greeting.title}{" "}
-                <span className="greeting-name">{greeting.name}</span>
                 <span className="wave-emoji">{emoji("👋")}</span>
               </h1>
               <p
@@ -50,18 +49,14 @@ export default function Greeting() {
             </div>
           </div>
           <div className="greeting-image-div">
-            {/* {illustration.animated ? (
+            {illustration.animated ? (
               <DisplayLottie animationData={landingPerson} />
             ) : (
               <img
                 alt="man sitting on table"
-                src={require("../../assets/images/mobileapps.svg")}
+                src={require("../../assets/images/manOnTable.svg")}
               ></img>
-            )} */}
-             <img
-                alt="man sitting on table"
-                src={require("../../assets/images/mobileapps.svg")}
-              ></img>
+            )}
           </div>
         </div>
       </div>

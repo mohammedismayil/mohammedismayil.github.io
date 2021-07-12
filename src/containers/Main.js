@@ -15,7 +15,7 @@ import Education from "./education/Education";
 import Top from "./topbutton/Top";
 import Twitter from "./twitter-embed/twitter";
 import {StyleProvider} from "../contexts/StyleContext";
-import "./Main.css";
+import "./Main.scss";
 import Profile from "./profile/Profile";
 
 export default class Main extends Component {
@@ -49,15 +49,15 @@ export default class Main extends Component {
           <Greeting />
           <Skills />
           {/* <StackProgress /> */}
-          {/* <Education /> */}
+          <Education />
           <WorkExperience />
           <Projects />
-          {/* <StartupProject /> */}
-          {/* <Achievement /> */}
-          {/* <Blogs /> */}
-          {/* <Talks /> */}
-          {/* <Twitter /> */}
-          {/* <Podcast /> */}
+          {/* <StartupProject />
+          <Achievement />
+          <Blogs />
+          <Talks />
+          <Twitter />
+          <Podcast /> */}
           <Profile />
           <Footer />
           <Top />
