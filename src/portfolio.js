@@ -187,11 +187,11 @@ const workExperiences = {
       company: "Trioangle Technologies",
       companylogo: require("./assets/images/facebookLogo.png"),
       date: "Jan 2019 – Present",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      descBullets: [
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
+      desc: "Started my Career here as an iOS Developer.",
+      // descBullets: [
+      //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      //   "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+      // ]
     }
     // {
     //   role: "Front-End Developer",
