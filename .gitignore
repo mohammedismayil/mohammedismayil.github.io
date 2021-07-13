@@ -24,5 +24,3 @@ yarn-error.log*
 
 #user generated content
 public/profile.json
-node_modules
-node_modules
