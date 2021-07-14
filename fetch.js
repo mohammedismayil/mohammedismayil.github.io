@@ -6,7 +6,7 @@ require("dotenv").config();
 const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
 const GITHUB_USERNAME = 'mohammedismayil';
 const USE_GITHUB_DATA = 'true';
-//using ssh key from server
+//using ssh key from server//
 const ERR = {
   noUserName:
     "Github Username was found to be undefined. Please set all relevant environment variables.",
