@@ -1,20 +1,29 @@
-FROM node:14-slim
+# This file is the main docker file configurations
 
-# Create app directory
-RUN mkdir -p /usr/src/app
+# Official Node JS runtime as a parent image
+FROM node:10.16.0-alpine
+
+# Set the working directory to ./app
+WORKDIR /app
 
 # Install app dependencies
-COPY package.json /usr/src/app/
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+COPY package.json ./
 
-WORKDIR /usr/src/app
+RUN apk add --no-cache git
 
-
-
+# Install any needed packages
 RUN npm install
-# RUN npm run data:import
-# Bundle app source
-COPY . /usr/src/app
-EXPOSE 3002
-# CMD ["node","seeder.js"]
 
-CMD ["npm","start"]
+# Audit fix npm packages
+RUN npm audit fix
+
+# Bundle app source
+COPY . /app
+
+# Make port 3000 available to the world outside this container
+EXPOSE 3002
+
+# Run app.js when the container launches
+CMD ["npm", "start"]
