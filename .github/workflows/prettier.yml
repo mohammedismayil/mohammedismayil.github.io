@@ -40,4 +40,4 @@ jobs:
       run: |
          ssh staging 'docker login --username "${{ secrets.Docker_username }}" --password "${{ secrets.Docker_password }}"'
          ssh staging 'docker pull ismayil10/mohammedismayil.github.io'
-         ssh staging 'docker run -e REACT_APP_GITHUB_TOKEN="${{ secrets.REACT_APP_GITHUB_TOKEN}}" -i -p 80:80 --name githubportfolio -d ismayil10/mohammedismayil.github.io'
+         ssh staging 'docker run -e REACT_APP_GITHUB_TOKEN="${{ secrets.REACT_APP_GITHUB_TOKEN}}" -i -p 80 --name githubportfolio -d ismayil10/mohammedismayil.github.io'
