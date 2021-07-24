@@ -15,7 +15,7 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Login to Docker Hub
       run: docker login --username "${{ secrets.Docker_username }}" --password "${{ secrets.Docker_password }}"
-    - name: Build the stack
+    - name: pushing to DockerHub
       run: |
         docker login --username "${{ secrets.Docker_username }}" --password "${{ secrets.Docker_password }}"
         docker build . --file Dockerfile -t ismayil10/mohammedismayil.github.io
