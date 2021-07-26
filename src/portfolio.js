@@ -39,7 +39,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY iOS DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "CRAZY iOS DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK IN",
   skills: [
     emoji(
       "⚡ Build and create mobile products in Objective-C or Swift"
