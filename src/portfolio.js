@@ -114,18 +114,18 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
-    // {
-    //   skillName: "mongodb",
-    //   fontAwesomeClassname: "fas fa-mongodb"
-    // },
-    // {
-    //   skillName: "python",
-    //   fontAwesomeClassname: "fab fa-python"
-    // },
-    // {
-    //   skillName: "docker",
-    //   fontAwesomeClassname: "fab fa-docker"
-    // }
+    {
+      skillName: "mongodb",
+      fontAwesomeClassname: "fas fa-mongodb"
+    },
+    {
+      skillName: "python",
+      fontAwesomeClassname: "fab fa-python"
+    },
+    {
+      skillName: "docker",
+      fontAwesomeClassname: "fab fa-docker"
+    }
   ],
   display: true // Set false to hide this section, defaults to true
 };
