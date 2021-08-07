@@ -66,7 +66,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
         >
           {cardInfo.date}
         </h5>
-        <p
+        {/* <p
           className={
             isDark
               ? "subTitle experience-text-desc dark-mode-text"
@@ -74,7 +74,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
           }
         >
           {cardInfo.desc}
-        </p>
+        </p> */}
         {/* <ul>
           <GetDescBullets descBullets={cardInfo.descBullets} isDark={isDark} />
         </ul> */}
