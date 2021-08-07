@@ -29,6 +29,7 @@ export default function ExperienceCard({cardInfo, isDark}) {
         ))
       : null;
   };
+  
 
   return (
     <div className={isDark ? "experience-card-dark" : "experience-card"}>
