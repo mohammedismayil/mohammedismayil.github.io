@@ -12,6 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+    - name: Deploy to Github Pages
+       run: npm deploy
     - uses: actions/setup-node@v1
     - name: Login to Docker Hub
       run: docker login --username "${{ secrets.Docker_username }}" --password "${{ secrets.Docker_password }}"
