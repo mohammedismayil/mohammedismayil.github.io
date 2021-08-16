@@ -16,13 +16,13 @@
     "react-lottie": "^1.2.3",
     "react-reveal": "^1.2.2",
     "react-scripts": "^3.4.3",
+    "react-test-renderer": "^17.0.2",
     "react-twitter-embed": "3.0.3",
-    "sass": "^1.32.8",
-    "react-test-renderer": "^17.0.2"
+    "sass": "^1.32.8"
   },
   "scripts": {
     "predeploy": "npm run build",
-    "start": "node fetch.js && react-scripts start",
+    "start": "node fetch.js && PORT=4000 react-scripts start",
     "build": "node fetch.js && react-scripts build",
     "deploy": "gh-pages -b master -d build",
     "test": "react-scripts test",
@@ -46,7 +46,7 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "prettier": "^2.3.1"
   }
 }
