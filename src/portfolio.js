@@ -114,10 +114,10 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
-    {
-      skillName: "mongodb",
-      fontAwesomeClassname: "fas fa-mongodb"
-    },
+    // {
+    //   skillName: "mongodb",
+    //   fontAwesomeClassname: "fas fa-mongodb"
+    // },
     {
       skillName: "python",
       fontAwesomeClassname: "fab fa-python"
