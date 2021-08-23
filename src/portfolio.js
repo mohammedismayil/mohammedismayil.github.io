@@ -114,6 +114,7 @@ https://fontawesome.com/icons?d=gallery */
       skillName: "firebase",
       fontAwesomeClassname: "fas fa-fire"
     },
+    //fixed some docker login issue in the server
     // {
     //   skillName: "mongodb",
     //   fontAwesomeClassname: "fas fa-mongodb"
