@@ -1,9 +1,9 @@
 name: Deploy To Server
 on:
   push:
-    branches: [ master ]
+    branches: [ oldgithubportfolio ]
   pull_request:
-    branches: [ master ]
+    branches: [ oldgithubportfolio ]
 
 jobs:
   build:
