@@ -31,22 +31,16 @@ import Header from "./Components/Header";
 class Square extends React.Component {
   constructor(props) {
     super(props);
+    this.squareTapped = this.squareTapped.bind(this);
     this.state = {
       value: "",
       currentUser: "X",
-      nextUser: "dd"
+      currentBool: true
     };
   }
   render() {
     return (
-      <button
-        className="square"
-        onClick={() =>
-          this.setState({
-            value: "X"
-          })
-        }
-      >
+      <button className="square" onClick={this.squareTapped}>
         {this.state.value}
       </button>
     );
@@ -54,19 +48,41 @@ class Square extends React.Component {
 
   squareTapped() {
     this.setState({
-      currentUser: "z",
-      value: "CV"
+      value: this.props.currentUser
     });
+    console.log("after tapping square");
+    this.props.updateCurrentUser(this.props.currentUser === "X" ? "O" : "X");
   }
 }
 
 class Board extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentUser: "X"
+    };
+    this.updateCurrentUser = this.updateCurrentUser.bind(this);
+    this.resetGame = this.resetGame.bind(this);
+  }
+
+  updateCurrentUser(childData) {
+    console.log("update current user in Board");
+    this.setState({
+      currentUser: childData
+    });
+  }
   renderSquare(i) {
-    return <Square value={i} />;
+    return (
+      <Square
+        value={i}
+        currentUser={this.state.currentUser}
+        updateCurrentUser={this.updateCurrentUser}
+      />
+    );
   }
 
   render() {
-    const status = "Next player";
+    const status = "Next player : " + this.state.currentUser;
 
     return (
       <div>
@@ -86,8 +102,15 @@ class Board extends React.Component {
           {this.renderSquare(7)}
           {this.renderSquare(8)}
         </div>
+
+        <button onClick={this.resetGame}>Reset Game</button>
       </div>
     );
+  }
+
+  resetGame() {
+    console.log("rendering again");
+    this.render();
   }
 }
 
