@@ -48,10 +48,15 @@ class Square extends React.Component {
 
   squareTapped() {
     this.setState({
-      value: this.props.currentUser
+      value:
+        this.state.value.length === 0
+          ? this.props.currentUser
+          : this.state.value
     });
     console.log("after tapping square");
-    this.props.updateCurrentUser(this.props.currentUser === "X" ? "O" : "X");
+    if (this.state.value.length === 0) {
+      this.props.updateCurrentUser(this.props.currentUser === "X" ? "O" : "X");
+    }
   }
 }
 
@@ -110,7 +115,8 @@ class Board extends React.Component {
 
   resetGame() {
     console.log("rendering again");
-    this.render();
+    this.renderSquare(2);
+    this.renderSquare(1);
   }
 }
 
