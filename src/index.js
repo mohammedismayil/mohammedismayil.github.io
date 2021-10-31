@@ -50,11 +50,18 @@ class Square extends React.Component {
   squareTapped() {
     console.log("selected square " + this.props.index);
 
-    this.props.currentUsers.push(this.props.index);
+    // this.props.currentUsers.push(this.props.index);
 
-    var nextUser = this.props.value === "X" ? "O" : "X";
-    var currentUser = this.props.value.length === 0 ? "X" : "O";
-    this.props.updateSquare(this.props.currentUsers, nextUser, currentUser);
+    var currentUser = this.props.nextUser;
+    var nextUser = currentUser === "X" ? "O" : "X";
+    console.log("next user" + nextUser);
+    console.log("current user" + currentUser);
+    this.props.currentUsers[this.props.index] = currentUser;
+
+    console.log("total users array " + this.props.currentUsers);
+    if (this.props.value.length === 0) {
+      this.props.updateSquare(this.props.currentUsers, nextUser, currentUser);
+    }
   }
 }
 
@@ -79,7 +86,7 @@ class Board extends React.Component {
   // }
   updateSquare(childData, nextUser, currentUser) {
     this.setState({
-      currentUser: currentUser,
+      currentUser: nextUser,
       nextUser: nextUser,
       currentUsers: childData
     });
@@ -91,9 +98,10 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
-        value={this.state.currentUser}
+        value={this.state.currentUsers[i]}
         currentUsers={this.state.currentUsers}
         updateSquare={this.updateSquare}
+        nextUser={this.state.nextUser}
         index={i}
       />
     );
@@ -101,7 +109,7 @@ class Board extends React.Component {
 
   renderinitialSquare(i) {
     this.setState({
-      currentUser: ""
+      currentUsers: ["", "", "", "", "", "", "", "", ""]
     });
   }
 
@@ -126,21 +134,6 @@ class Board extends React.Component {
       <div>
         <div className="status">{status}</div>
         {lists}
-        {/* <div className="board-row">
-          {this.renderSquare(0)}
-          {this.renderSquare(1)}
-          {this.renderSquare(2)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(3)}
-          {this.renderSquare(4)}
-          {this.renderSquare(5)}
-        </div>
-        <div className="board-row">
-          {this.renderSquare(6)}
-          {this.renderSquare(7)}
-          {this.renderSquare(8)}
-        </div> */}
         <button onClick={this.resetGame}>Reset Game</button>
       </div>
     );
@@ -149,7 +142,8 @@ class Board extends React.Component {
   resetGame() {
     console.log("rendering again");
     this.setState({
-      currentUser: ""
+      currentUsers: ["", "", "", "", "", "", "", "", ""],
+      nextUser: "X"
     });
   }
 }
