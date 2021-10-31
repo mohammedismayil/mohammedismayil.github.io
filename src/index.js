@@ -60,7 +60,13 @@ class Square extends React.Component {
 
     console.log("total users array " + this.props.currentUsers);
     if (this.props.value.length === 0) {
-      this.props.updateSquare(this.props.currentUsers, nextUser, currentUser);
+      this.props.updateSquare(
+        this.props.currentUsers,
+        nextUser,
+        currentUser,
+        this.props.index,
+        currentUser
+      );
     }
   }
 }
@@ -72,10 +78,13 @@ class Board extends React.Component {
       initialValue: "",
       currentUsers: ["", "", "", "", "", "", "", "", ""],
       nextUser: "X",
-      currentUser: ""
+      currentUser: "",
+      lastIndex: "",
+      lastUser: ""
     };
     this.updateSquare = this.updateSquare.bind(this);
     this.resetGame = this.resetGame.bind(this);
+    this.undoLastMove = this.undoLastMove.bind(this);
   }
 
   // updateCurrentUser(childData) {
@@ -84,11 +93,13 @@ class Board extends React.Component {
   //     currentUser: childData
   //   });
   // }
-  updateSquare(childData, nextUser, currentUser) {
+  updateSquare(childData, nextUser, currentUser, lastIndex, lastUser) {
     this.setState({
       currentUser: nextUser,
       nextUser: nextUser,
-      currentUsers: childData
+      currentUsers: childData,
+      lastIndex: lastIndex,
+      lastUser: lastUser
     });
     // console.log("after tapping square");
     // if (this.props.value.length === 0) {
@@ -116,9 +127,7 @@ class Board extends React.Component {
   render() {
     const status = "Next player : " + this.state.nextUser;
 
-    const rows = [1, 2, 3];
-    // eslint-disable-next-line array-callback-return
-    const lists = this.state.currentUsers.map((currentUser, index) => {
+    var lists = this.state.currentUsers.map((currentUser, index) => {
       // console.log(index);
       if (index === 0 || index === 1 || index === 2) {
         return (
@@ -135,10 +144,21 @@ class Board extends React.Component {
         <div className="status">{status}</div>
         {lists}
         <button onClick={this.resetGame}>Reset Game</button>
+        <button onClick={this.undoLastMove}>Undo</button>
       </div>
     );
   }
 
+  undoLastMove() {
+    console.log("undoing last move");
+    console.log("undoing last move" + this.state.currentUsers);
+    var changed = this.state.currentUsers;
+    changed[this.state.lastIndex] = "";
+    this.setState({
+      currentUsers: changed,
+      nextUser: this.state.lastUser
+    });
+  }
   resetGame() {
     console.log("rendering again");
     this.setState({
