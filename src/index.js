@@ -34,6 +34,7 @@ class Square extends React.Component {
     this.squareTapped = this.squareTapped.bind(this);
     this.state = {
       value: "",
+      index: "",
       currentUser: "X",
       currentBool: true
     };
@@ -41,22 +42,19 @@ class Square extends React.Component {
   render() {
     return (
       <button className="square" onClick={this.squareTapped}>
-        {this.state.value}
+        {this.props.value}
       </button>
     );
   }
 
   squareTapped() {
-    this.setState({
-      value:
-        this.state.value.length === 0
-          ? this.props.currentUser
-          : this.state.value
-    });
-    console.log("after tapping square");
-    if (this.state.value.length === 0) {
-      this.props.updateCurrentUser(this.props.currentUser === "X" ? "O" : "X");
-    }
+    console.log("selected square " + this.props.index);
+
+    this.props.currentUsers.push(this.props.index);
+
+    var nextUser = this.props.value === "X" ? "O" : "X";
+    var currentUser = this.props.value.length === 0 ? "X" : "O";
+    this.props.updateSquare(this.props.currentUsers, nextUser, currentUser);
   }
 }
 
@@ -64,35 +62,71 @@ class Board extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentUser: "X"
+      initialValue: "",
+      currentUsers: ["", "", "", "", "", "", "", "", ""],
+      nextUser: "X",
+      currentUser: ""
     };
-    this.updateCurrentUser = this.updateCurrentUser.bind(this);
+    this.updateSquare = this.updateSquare.bind(this);
     this.resetGame = this.resetGame.bind(this);
   }
 
-  updateCurrentUser(childData) {
-    console.log("update current user in Board");
+  // updateCurrentUser(childData) {
+  //   console.log("update current user in Board");
+  //   this.setState({
+  //     currentUser: childData
+  //   });
+  // }
+  updateSquare(childData, nextUser, currentUser) {
     this.setState({
-      currentUser: childData
+      currentUser: currentUser,
+      nextUser: nextUser,
+      currentUsers: childData
     });
+    // console.log("after tapping square");
+    // if (this.props.value.length === 0) {
+    //   this.props.updateCurrentUser(this.props.currentUser === "X" ? "O" : "X");
+    // }
   }
   renderSquare(i) {
     return (
       <Square
-        value={i}
-        currentUser={this.state.currentUser}
-        updateCurrentUser={this.updateCurrentUser}
+        value={this.state.currentUser}
+        currentUsers={this.state.currentUsers}
+        updateSquare={this.updateSquare}
+        index={i}
       />
     );
   }
 
-  render() {
-    const status = "Next player : " + this.state.currentUser;
+  renderinitialSquare(i) {
+    this.setState({
+      currentUser: ""
+    });
+  }
 
+  render() {
+    const status = "Next player : " + this.state.nextUser;
+
+    const rows = [1, 2, 3];
+    // eslint-disable-next-line array-callback-return
+    const lists = this.state.currentUsers.map((currentUser, index) => {
+      // console.log(index);
+      if (index === 0 || index === 1 || index === 2) {
+        return (
+          <div className="board-row">
+            {this.renderSquare(index === 0 ? 0 : index === 1 ? 3 : 6)}
+            {this.renderSquare(index === 0 ? 1 : index === 1 ? 4 : 7)}
+            {this.renderSquare(index === 0 ? 2 : index === 1 ? 5 : 8)}
+          </div>
+        );
+      }
+    });
     return (
       <div>
         <div className="status">{status}</div>
-        <div className="board-row">
+        {lists}
+        {/* <div className="board-row">
           {this.renderSquare(0)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
@@ -106,8 +140,7 @@ class Board extends React.Component {
           {this.renderSquare(6)}
           {this.renderSquare(7)}
           {this.renderSquare(8)}
-        </div>
-
+        </div> */}
         <button onClick={this.resetGame}>Reset Game</button>
       </div>
     );
@@ -115,8 +148,9 @@ class Board extends React.Component {
 
   resetGame() {
     console.log("rendering again");
-    this.renderSquare(2);
-    this.renderSquare(1);
+    this.setState({
+      currentUser: ""
+    });
   }
 }
 
