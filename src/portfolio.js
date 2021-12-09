@@ -39,7 +39,7 @@ const socialMediaLinks = {
 
 const skillsSection = {
   title: "What I do",
-  subTitle: "CRAZY iOS DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK",
+  subTitle: "CRAZY iOS DEVELOPER WHO WANTS TO EXPLORE EVERY TECH STACK IN",
   skills: [
     emoji(
       "⚡ Build and create mobile products in Objective-C or Swift"
@@ -369,8 +369,8 @@ const contactInfo = {
   title: emoji("Contact Me ☎️"),
   subtitle:
     "Discuss a project or just want to say hi? My Inbox is open for all.",
-  number: "+92-3243454077",
-  email_address: "saadpasta70@gmail.com"
+  number: "+91-9655328910",
+  email_address: "mohammedismayil10@gmail.com"
 };
 
 // Twitter Section

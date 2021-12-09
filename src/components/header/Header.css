@@ -54,8 +54,7 @@
 .header .logo-name {
   font-family: "Agustina Regular";
   font-weight: bold;
-  font-variant-ligatures: no-common-ligatures;
-  -webkit-font-variant-ligatures: no-common-ligatures;
+color: #55198b;
   padding: 0 10px;
 }
 
