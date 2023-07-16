@@ -196,13 +196,24 @@ const workExperiences = {
       role: "iOS Developer",
       company: "Trioangle Technologies",
       companylogo: require("./assets/images/trioangle-technologies.png"),
-      date: "Jan 2020 – Present",
+      date: "Jan 2020 – Dec 2022",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       descBullets: [
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-      ]
-    }
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      ],
+    },
+    {
+      role: "iOS Developer",
+      company: "Zoho Technologies",
+      companylogo: require("./assets/images/zohologo.png"),
+      date: "Jan 2023 – Present",
+      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      descBullets: [
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+      ],
+    },
     // {
     //   role: "Front-End Developer",
     //   company: "Quora",
@@ -217,7 +228,7 @@ const workExperiences = {
     //   date: "Jan 2015 – Sep 2015",
     //   desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     // }
-  ]
+  ],
 };
 
 /* Your Open Source Section to View Your Github Pinned Projects
