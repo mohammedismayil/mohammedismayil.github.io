@@ -23,7 +23,7 @@
   "scripts": {
     "predeploy": "npm run build",
     "start": "node fetch.js && PORT=4000 react-scripts --openssl-legacy-provider start",
-    "build": "node fetch.js && react-scripts build",
+    "build": "node fetch.js && react-scripts --openssl-legacy-provider build",
     "deploy": "gh-pages -b gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
