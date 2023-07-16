@@ -14,11 +14,11 @@ const greeting = {
   username: "Mohammed Ismayil",
   title: "Hello, I'm Ismayil",
   subTitle: emoji(
-    "A passionate iOS App Developer 🚀 who builds Scalable and Robust Mobile applications."
+    "A passionate iOS Developer 🚀 who builds Scalable and Robust Mobile applications."
   ),
   resumeLink:
     "https://drive.google.com/drive/folders/1byffjqXjvjNbcqsPhxutRBCrTPpDu5Qc?usp=sharing",
-  displayGreeting: true // Set false to hide this section, defaults to true
+  displayGreeting: true, // Set false to hide this section, defaults to true
 };
 // Social Media Links
 
